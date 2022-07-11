@@ -1,0 +1,12 @@
+{% extends 'adminlte/lib/_main_sidebar.html' %}
+{% load admin_menu %}
+
+{% block nav_links %}
+    {% autoescape off %}{% menu %}{% endautoescape %}
+    <!-- <li class="nav-item has-treeview"><a href="/admin/custom_page/" class="nav-link"><i class="nav-icon fas fa-edit"></i> <p> Report</p><p><i class="fas fa-angle-left right"></i></p></a><ul class="nav nav-treeview">
+        <li class="nav-item"><a href="/admin/transaction_main_page/" class="nav-link"><i class="far fa-circle nav-icon"></i> TransactionMain </a></li>
+        <li class="nav-item"><a href="/admin/tender_notice_page/" class="nav-link"><i class="far fa-circle nav-icon"></i> TenderNotice </a></li>
+        </li> -->
+{% endblock nav_links %}
+
+

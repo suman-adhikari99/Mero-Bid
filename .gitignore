@@ -1,0 +1,27 @@
+# migrations
+**/migrations/**
+**/migrations
+!**/migrations/__init__.py
+
+# media
+static/*
+static/
+log/*
+log/
+#Jet Brains idegitignore
+.idea/
+
+#Django
+*/*/*/__pycache__/
+*/*/__pycache__/
+*/__pycache__/
+*.pyc
+
+# setting file
+e_bidding/local_settings.py
+e_bidding/manage.py
+
+#extra file
+pyvenv.cfg
+
+
