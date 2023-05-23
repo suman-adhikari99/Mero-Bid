@@ -23,12 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+SECRET_KEY = 'ksjd;ake13132'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1','143.244.128.203','admin.ebidding.axiossoftworks.com' ]
+ALLOWED_HOSTS = ['*' ]
 
 
 # Application definition
@@ -95,14 +95,13 @@ WSGI_APPLICATION = 'e_bidding.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ebidding',
-        'USER': 'postgres',
-        'PASSWORD': 'aXios366350AS!@#$',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'djangoapp',
+        'USER': 'admin',
+        'PASSWORD': 'pass',
+        'HOST': 'db',
+        'PORT': 5432,
     }
-    
 }
 
 # Password validation
@@ -196,49 +195,49 @@ CORS_ALLOWED_ORIGINS = (
 
 CORS_ALLOW_CREDENTIALS = True
 
-LOGGING = {
-    'version': 1,
-    'formatters': {
-        'verbose': {
-            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
-            'style': '{',
-        },
-        'simple': {
-            'format': '{levelname} {message}',
-            'style': '{',
-        },
-    },
-    'handlers': {
-        'console': {
-            'level': 'INFO',
-            'class': 'logging.StreamHandler',
-            'formatter': 'simple'
-        },
-        'file': {
-            'level': 'INFO',
-            'class': 'logging.FileHandler',
-            'filename': './log/production.log',
-            'formatter': 'verbose'
-        },
-        'celery': {
-            'level': 'INFO',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': './log/celery.log',
-            'formatter': 'simple',
-            'maxBytes': 1024 * 1024 * 100,  # 100 mb
-        }
-    },
-    'loggers': {
-        'e_bidding_logger': {
-            'handlers': ['console', 'file'],
-            'level': 'INFO',
-        },
-        'celery': {
-            'handlers': ['celery', 'console'],
-            'level': 'DEBUG',
-        }
-    }
-}
+# LOGGING = {
+#     'version': 1,
+#     'formatters': {
+#         'verbose': {
+#             'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+#             'style': '{',
+#         },
+#         'simple': {
+#             'format': '{levelname} {message}',
+#             'style': '{',
+#         },
+#     },
+#     'handlers': {
+#         'console': {
+#             'level': 'INFO',
+#             'class': 'logging.StreamHandler',
+#             'formatter': 'simple'
+#         },
+#         'file': {
+#             'level': 'INFO',
+#             'class': 'logging.FileHandler',
+#             'filename': './log/production.log',
+#             'formatter': 'verbose'
+#         },
+#         'celery': {
+#             'level': 'INFO',
+#             'class': 'logging.handlers.RotatingFileHandler',
+#             'filename': './log/celery.log',
+#             'formatter': 'simple',
+#             'maxBytes': 1024 * 1024 * 100,  # 100 mb
+#         }
+#     },
+#     'loggers': {
+#         'e_bidding_logger': {
+#             'handlers': ['console', 'file'],
+#             'level': 'INFO',
+#         },
+#         'celery': {
+#             'handlers': ['celery', 'console'],
+#             'level': 'DEBUG',
+#         }
+#     }
+# }
 
 # email configuration
 # EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
