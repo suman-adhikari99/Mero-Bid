@@ -21,7 +21,6 @@ RUN pip install -r requirements.txt
 
 # Copy the Django project code into the container
 COPY . /app
-RUN pip install docopt
 
 # Expose the port that the Django development server will run on
 EXPOSE 8001
